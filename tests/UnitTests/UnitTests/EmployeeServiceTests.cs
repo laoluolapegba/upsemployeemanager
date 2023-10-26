@@ -38,7 +38,7 @@ namespace UnitTests
             var configuration = new MapperConfiguration(cfg => cfg.AddProfile(myProfile));
             var mapper = new Mapper(configuration);
 
-            _employeeService = new EmployeeService(_httpClientService.Object, mapper);
+            _employeeService = new EmployeeService(_httpClientService.Object);
 
             //_employeeService = new EmployeeService(new MockHttpClientService());
 

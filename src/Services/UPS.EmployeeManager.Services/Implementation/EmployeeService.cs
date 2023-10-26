@@ -32,10 +32,10 @@ namespace UPS.EmployeeManager.Services.Implementation
 
         //private readonly IValidator<EmployeeModel> _validator;
 
-        public EmployeeService(IHttpClientService httpClientService, IMapper mapper)
+        public EmployeeService(IHttpClientService httpClientService)
         {
             _httpClientService = httpClientService;
-            _mapper = mapper;
+            //_mapper = mapper;
             //_logger = logger;
         }
 
