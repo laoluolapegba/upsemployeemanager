@@ -33,6 +33,8 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
             btnRemove = new Button();
             btnAdd = new Button();
             panel4 = new Panel();
@@ -51,8 +53,7 @@
             label2 = new Label();
             txtId = new TextBox();
             label1 = new Label();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
+            btnExport = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btnExport);
             panel3.Controls.Add(btnSearch);
             panel3.Controls.Add(txtSearch);
             panel3.Controls.Add(btnRemove);
@@ -102,6 +104,23 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1325, 59);
             panel3.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Location = new Point(1139, 4);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(129, 42);
+            btnSearch.TabIndex = 11;
+            btnSearch.Text = "Search Employee";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(994, 17);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(139, 23);
+            txtSearch.TabIndex = 5;
             // 
             // btnRemove
             // 
@@ -276,22 +295,15 @@
             label1.TabIndex = 0;
             label1.Text = "Id:";
             // 
-            // txtSearch
+            // btnExport
             // 
-            txtSearch.Location = new Point(994, 17);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(139, 23);
-            txtSearch.TabIndex = 5;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Location = new Point(1139, 4);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(129, 42);
-            btnSearch.TabIndex = 11;
-            btnSearch.Text = "Search Employee";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
+            btnExport.Location = new Point(598, 8);
+            btnExport.Name = "btnExport";
+            btnExport.Size = new Size(129, 42);
+            btnExport.TabIndex = 12;
+            btnExport.Text = "Export to CSV";
+            btnExport.UseVisualStyleBackColor = true;
+            btnExport.Click += btnExport_Click;
             // 
             // frmMain
             // 
@@ -342,5 +354,6 @@
         private PictureBox pictureBox1;
         private TextBox txtSearch;
         private Button btnSearch;
+        private Button btnExport;
     }
 }

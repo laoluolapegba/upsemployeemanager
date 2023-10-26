@@ -196,13 +196,26 @@ namespace UPS.EmployeeManager.Services.Implementation
 
             return null;
         }
+        public void ExportEmployeesToCsv(IEnumerable<EmployeeModel> employees, string filePath)
+        {
+            using (var writer = new StreamWriter(filePath))
+            {
+                // Write the CSV header
+                writer.WriteLine("id,name,email,gender,status");
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="employeeId"></param>
-        /// <returns></returns>
-        public async Task<bool> DeleteAsync(int employeeId)
+                foreach (var employee in employees)
+                {
+                    // Write each employee's data
+                    writer.WriteLine($"{employee.Id},{employee.Name},{employee.Email},{employee.Gender},{employee.Status}");
+                }
+            }
+        }
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="employeeId"></param>
+            /// <returns></returns>
+            public async Task<bool> DeleteAsync(int employeeId)
         {
             using (var httpClient = _httpClientService.CreateClient("UPSTestEndpoint"))
             {
@@ -228,6 +241,8 @@ namespace UPS.EmployeeManager.Services.Implementation
         }
 
         
+
+
         
         /// <summary>
         /// serialize to stream instead of string

@@ -19,5 +19,7 @@ namespace UPS.EmployeeManager.Services
         Task<EmployeeModel> GetByIdAsync(int employeeId);
 
         Task<bool> DeleteAsync(int id);
+        void ExportEmployeesToCsv(IEnumerable<EmployeeModel> employees, string filePath);
+
     }
 }

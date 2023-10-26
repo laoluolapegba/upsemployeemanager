@@ -113,7 +113,7 @@ namespace UPS.EmployeeManager.UI.WinForms
                 _logger.LogError(ex.Message, ex.InnerException);
                 MessageBox.Show("A fatal error occured, the administrator has been notified", "Employee Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
 
         }
         private void dgMain_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -139,7 +139,7 @@ namespace UPS.EmployeeManager.UI.WinForms
                 _logger.LogError(ex.Message, ex.InnerException);
                 MessageBox.Show("A fatal error occured, the administrator has been notified", "Employee Manager", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         #endregion
@@ -273,5 +273,28 @@ namespace UPS.EmployeeManager.UI.WinForms
 
 
 
+        private async void btnExport_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new SaveFileDialog
+            {
+                Filter = "CSV Files|*.csv",
+                Title = "Save Employee Data as CSV",
+                FileName = "pdemployee_data.csv"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                // Get employee data from the service or wherever it is stored
+                IEnumerable<EmployeeModel> employees = await _employeeService.GetAllAsync();
+
+                // Export the data to the selected CSV file
+                _employeeService.ExportEmployeesToCsv(employees, filePath);
+
+                // Inform the user that the export is complete
+                MessageBox.Show("Employee data exported to CSV successfully.", "Export Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
