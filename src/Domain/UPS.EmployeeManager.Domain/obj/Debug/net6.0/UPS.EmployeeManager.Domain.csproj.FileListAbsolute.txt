@@ -1,0 +1,11 @@
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\bin\Debug\net6.0\UPS.EmployeeManager.Domain.deps.json
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\bin\Debug\net6.0\UPS.EmployeeManager.Domain.dll
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\bin\Debug\net6.0\UPS.EmployeeManager.Domain.pdb
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\UPS.EmployeeManager.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\UPS.EmployeeManager.Domain.AssemblyInfoInputs.cache
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\UPS.EmployeeManager.Domain.AssemblyInfo.cs
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\UPS.EmployeeManager.Domain.csproj.CoreCompileInputs.cache
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\UPS.EmployeeManager.Domain.dll
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\refint\UPS.EmployeeManager.Domain.dll
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\UPS.EmployeeManager.Domain.pdb
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Domain\UPS.EmployeeManager.Domain\obj\Debug\net6.0\ref\UPS.EmployeeManager.Domain.dll

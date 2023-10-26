@@ -1,0 +1,11 @@
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\bin\Debug\net6.0\UPS.EmployeeManager.Shared.deps.json
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\bin\Debug\net6.0\UPS.EmployeeManager.Shared.dll
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\bin\Debug\net6.0\UPS.EmployeeManager.Shared.pdb
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\UPS.EmployeeManager.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\UPS.EmployeeManager.Shared.AssemblyInfoInputs.cache
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\UPS.EmployeeManager.Shared.AssemblyInfo.cs
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\UPS.EmployeeManager.Shared.csproj.CoreCompileInputs.cache
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\UPS.EmployeeManager.Shared.dll
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\refint\UPS.EmployeeManager.Shared.dll
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\UPS.EmployeeManager.Shared.pdb
+C:\LaoluOlapegba\source\repos\InterviewPrep\EmployeeManager\src\Shared\UPS.EmployeeManager.Entities\obj\Debug\net6.0\ref\UPS.EmployeeManager.Shared.dll
