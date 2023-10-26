@@ -20,20 +20,23 @@ using UPS.EmployeeManager.Services.Validation;
 using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using UPS.EmployeeManager.Services.Mapping;
+using Microsoft.Extensions.Logging;
 
 namespace UPS.EmployeeManager.Services.Implementation
 {
     public class EmployeeService : IEmployeeService
     {
         private readonly IHttpClientService _httpClientService;
-        //private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
+        private readonly ILogger _logger;
+
         //private readonly IValidator<EmployeeModel> _validator;
-        
-        public EmployeeService(IHttpClientService httpClientService)
+
+        public EmployeeService(IHttpClientService httpClientService, IMapper mapper)
         {
             _httpClientService = httpClientService;
-            //_mapper = mapper;
-                   ;
+            _mapper = mapper;
+            //_logger = logger;
         }
 
         public async Task<IEnumerable<EmployeeModel>> GetAllAsync()
@@ -47,6 +50,7 @@ namespace UPS.EmployeeManager.Services.Implementation
                     var stream = await response.Content.ReadAsStreamAsync();
                     var employeesResponse = await System.Text.Json.JsonSerializer.DeserializeAsync<List<Employee>>(stream);
 
+                    //return employeesResponse.Select(x => x.ToEmployeeDto());
                     var employeesList = _mapper.Map<List<Employee>, IEnumerable<EmployeeModel>>(employeesResponse);
                     return employeesList;
                 }
@@ -143,11 +147,14 @@ namespace UPS.EmployeeManager.Services.Implementation
                     {
                         string content = await response.Content.ReadAsStringAsync();
                         var employeesResponse = JsonConvert.DeserializeObject<List<Employee>>(content);
-                        return employeesResponse.Select(x => x.ToEmployeeDto());
+
+                        var employeesList = _mapper.Map<List<Employee>, IEnumerable<EmployeeModel>>(employeesResponse);
+                        return employeesList; // employeesResponse.Select(x => x.ToEmployeeDto());
                     }
                 }
                 catch (HttpRequestException ex)
                 {
+                    _logger.LogError(ex.Message, ex.InnerException);
                     // Handle HTTP request error
                 }
             }

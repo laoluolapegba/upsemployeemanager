@@ -76,17 +76,6 @@ namespace UPS.EmployeeManager.UI.WinForms
             clist.Name = "female";
             clist.Id = "female";
             this.cboGender.Items.Add(clist);
-
-
-
-            //Dictionary<string, string> dict = new Dictionary<string, string>()
-            //{
-            //    {"female","female" },
-            //    {"male","male" }
-            //};
-            //cboGender.DataSource = new BindingSource(dict, null);
-            //cboGender.DisplayMember = "Key";
-            //cboGender.ValueMember = "Value";
         }
 
         public void ClearForm()

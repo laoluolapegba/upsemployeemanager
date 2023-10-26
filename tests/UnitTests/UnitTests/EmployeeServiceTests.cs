@@ -3,6 +3,10 @@ using UPS.EmployeeManager.Services.Implementation;
 using UPS.EmployeeManager.Services;
 using UPS.EmployeeManager.Domain.Entities;
 using UPS.EmployeeManager.Shared.Models;
+using Moq;
+using AutoMapper;
+using UPS.EmployeeManager.Services.Mapping;
+using Moq.Protected;
 
 namespace UnitTests
 {
@@ -10,14 +14,35 @@ namespace UnitTests
     public class EmployeeServiceTests
     {
         private IEmployeeService _employeeService;
-
+        private Mock<IHttpClientService> _httpClientService;
         [SetUp]
         public void Setup()
         {
 
-            _employeeService = new EmployeeService(new MockHttpClientService());
-        }
+            ////// Create a mock HttpClientFactory
+            //_httpClientService = new Mock<IHttpClientService>(MockBehavior.Loose);
+            //_httpClientService.Setup(x => x.CreateClient(It.IsAny<string>())).Returns(new HttpClient());
 
+
+            var httpMessageHandlerMock = new Mock<HttpMessageHandler>();
+                httpMessageHandlerMock
+                .Protected()
+                .Setup<Task<HttpResponseMessage>>(
+                            "SendAsync",
+                ItExpr.IsAny<HttpRequestMessage>(),
+                ItExpr.IsAny<CancellationToken>())
+                .ReturnsAsync(new HttpResponseMessage());
+
+
+            var myProfile = new MappingProfile();
+            var configuration = new MapperConfiguration(cfg => cfg.AddProfile(myProfile));
+            var mapper = new Mapper(configuration);
+
+            _employeeService = new EmployeeService(_httpClientService.Object, mapper);
+
+            //_employeeService = new EmployeeService(new MockHttpClientService());
+
+        }
         [Test]
         public async Task GetEmployeesAsync_ReturnsEmployees()
         {
@@ -48,14 +73,13 @@ namespace UnitTests
 
             // Assert
             Assert.IsNotNull(createdEmployee);
-            // Add more specific assertions as needed
         }
 
         [Test]
         public async Task UpdateEmployeeAsync_UpdatesEmployee()
         {
             // Arrange
-            int employeeId = 523171; 
+            int employeeId = 5507770; 
             var updatedEmployee = new EmployeeModel
             {
                 Name = "Laolu olapegba",
@@ -80,7 +104,7 @@ namespace UnitTests
         public async Task DeleteEmployeeAsync_DeletesEmployee()
         {
             // Arrange
-            int employeeId = 523171; 
+            int employeeId = 5507770; 
 
             // Act
             var result = await _employeeService.DeleteAsync(employeeId);
@@ -93,7 +117,7 @@ namespace UnitTests
         public async Task SearchEmployeesByNameAsync_ReturnsEmployees()
         {
             // Arrange
-            string searchName = "John"; // Replace with a valid name to search
+            string searchName = "john";
 
             // Act
             var employees = await _employeeService.SearchByNameAsync(searchName);
@@ -107,7 +131,7 @@ namespace UnitTests
         public async Task GetEmployeeByIdAsync_ReturnsEmployee()
         {
             // Arrange
-            int employeeId = 123; // Replace with a valid employee ID
+            int employeeId = 5507770;
 
             // Act
             var employee = await _employeeService.GetByIdAsync(employeeId);

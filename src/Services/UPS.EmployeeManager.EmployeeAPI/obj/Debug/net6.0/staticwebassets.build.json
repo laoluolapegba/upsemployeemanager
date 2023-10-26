@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vcep2HX8B4O2rDfOYI6YZE8895aC/EUFJnxFU+GaUrU=",
+  "Source": "UPS.EmployeeManager.EmployeeProxyAPI",
+  "BasePath": "_content/UPS.EmployeeManager.EmployeeProxyAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
